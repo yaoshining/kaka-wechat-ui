@@ -1,0 +1,30 @@
+@import "../../../base/fn";
+
+.kakaui-cells_checkbox {
+    .kakaui-cell__hd {
+        padding-right: @kakauiCellInnerGapH;
+    }
+    .kakaui-icon-checked {
+        &:before {
+            content: '\EA01';
+            color: #C9C9C9;
+            font-size: 23px;
+            display: block;
+        }
+    }
+}
+
+// method2 accessbility
+.kakaui-check {
+    // checkbox
+    .kakaui-cells_checkbox & {
+        &:checked {
+            & + .kakaui-icon-checked {
+                &:before {
+                    content: '\EA06';
+                    color: #09BB07;
+                }
+            }
+        }
+    }
+}

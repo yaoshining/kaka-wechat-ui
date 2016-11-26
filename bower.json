@@ -1,0 +1,22 @@
+{
+    "name": "kakaui",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yaoshining/kaka-wechat-ui.git"
+    },
+    "description": "kaka wechat mobile ui",
+    "main": "dist/style/kakaui.css",
+    "version": "1.0.0",
+    "authors": [
+        "yaoshining"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "wechat",
+        "weixin",
+        "mobile",
+        "ui"
+    ],
+    "homepage": "https://github.com/yaoshining/kaka-wechat-ui",
+    "ignore": []
+}

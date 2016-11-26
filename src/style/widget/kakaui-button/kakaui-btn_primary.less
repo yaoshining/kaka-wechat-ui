@@ -1,0 +1,12 @@
+@import "../../base/fn";
+
+.kakaui-btn_primary {
+    background-color: @kakauiBtnPrimaryBg;
+    &:not(.kakaui-btn_disabled):visited {
+        color: @kakauiBtnFontColor;
+    }
+    &:not(.kakaui-btn_disabled):active {
+        color: @kakauiBtnActiveFontColor;
+        background-color: @kakauiBtnPrimaryActiveBg;
+    }
+}

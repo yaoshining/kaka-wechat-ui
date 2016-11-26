@@ -1,0 +1,93 @@
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">SearchBar</h1>
+        <p class="page__desc">搜索栏</p>
+    </div>
+    <div class="page__bd">
+        <!--<a href="javascript:;" class="kakaui-btn kakaui-btn_primary">点击展现searchBar</a>-->
+        <div class="kakaui-search-bar" id="searchBar">
+            <form class="kakaui-search-bar__form">
+                <div class="kakaui-search-bar__box">
+                    <i class="kakaui-icon-search"></i>
+                    <input type="search" class="kakaui-search-bar__input" id="searchInput" placeholder="搜索" required/>
+                    <a href="javascript:" class="kakaui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="kakaui-search-bar__label" id="searchText">
+                    <i class="kakaui-icon-search"></i>
+                    <span>搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="kakaui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <div class="kakaui-cells searchbar-result" id="searchResult">
+            <div class="kakaui-cell kakaui-cell_access">
+                <div class="kakaui-cell__bd kakaui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="kakaui-cell kakaui-cell_access">
+                <div class="kakaui-cell__bd kakaui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="kakaui-cell kakaui-cell_access">
+                <div class="kakaui-cell__bd kakaui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="kakaui-cell kakaui-cell_access">
+                <div class="kakaui-cell__bd kakaui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+
+        function hideSearchResult(){
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch(){
+            hideSearchResult();
+            $searchBar.removeClass('kakaui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function(){
+            $searchBar.addClass('kakaui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function () {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function(){
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            })
+        ;
+        $searchClear.on('click', function(){
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function(){
+            cancelSearch();
+            $searchInput.blur();
+        });
+    });
+</script>

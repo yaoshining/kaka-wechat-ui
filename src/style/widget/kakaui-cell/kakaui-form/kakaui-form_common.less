@@ -1,0 +1,75 @@
+@import "../../../base/fn";
+
+.kakaui-label{
+  display:block;
+  width:@kakauiCellLabelWidth;
+  .text_wrap();
+}
+.kakaui-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: unit(@kakauiCellLineHeight, em);
+    line-height: @kakauiCellLineHeight;
+
+    // hides the spin-button
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+.kakaui-textarea {
+    display: block;
+    border: 0;
+    resize: none;
+    width: 100%;
+    color: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    outline: 0;
+}
+
+.kakaui-textarea-counter{
+    color: @kakauiTextColorTips;
+    text-align: right;
+    .kakaui-cell_warn &{
+        color: @kakauiTextColorWarn;
+    }
+}
+
+.kakaui-toptips {
+    display:none;
+    position: fixed;
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding:5px;
+    font-size:14px;
+    text-align: center;
+    color: #FFF;
+    z-index: 5000;
+    .text_wrap();
+}
+.kakaui-toptips_warn {
+    background-color: @kakauiColorWarn;
+}
+.kakaui-cells_form {
+    .kakaui-cell__ft{
+        font-size:0;
+    }
+    .kakaui-icon-warn{
+        display:none;
+    }
+    input, textarea, label[for]{
+        .setTapColor();
+    }
+}
+.kakaui-cell_warn{
+    color:@kakauiTextColorWarn;
+    .kakaui-icon-warn{display:inline-block;}
+}

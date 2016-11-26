@@ -1,0 +1,63 @@
+@import "../../base/fn";
+@import "kakaui-btn_global";
+@import "kakaui-btn_default";
+@import "kakaui-btn_primary";
+@import "kakaui-btn_warn";
+@import "kakaui-btn_orange";
+@import "kakaui-btn_yellow";
+@import "kakaui-btn_disabled";
+@import "kakaui-btn_plain";
+
+button, input {
+    &.kakaui-btn {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.kakaui-btn_inline,&.kakaui-btn_mini {
+        width: auto;
+    }
+    &.kakaui-btn_plain-primary,&.kakaui-btn_plain-default{
+        border-width: 1px;
+        background-color: transparent;
+    }
+}
+
+.kakaui-btn_mini {
+    display: inline-block;
+    padding: 0 1.32em;
+    line-height: @kakauiBtnMiniHeight;
+    font-size: @kakauiBtnMiniFontSize;
+}
+
+
+/*gap between btn*/
+.kakaui-btn + .kakaui-btn {
+    margin-top: @kakauiBtnDefaultGap;
+}
+
+.kakaui-btn.kakaui-btn_inline + .kakaui-btn.kakaui-btn_inline {
+    margin-top: auto;
+    margin-left: @kakauiBtnDefaultGap;
+}
+
+.kakaui-btn-area {
+    margin: @kakauiCellsMarginTop @kakauiBtnDefaultGap .3em;
+}
+.kakaui-btn-area_inline {
+    display: flex;
+    .kakaui-btn {
+        margin-top: auto;
+        margin-right: @kakauiBtnDefaultGap;
+        width: 100%;
+        flex: 1;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+

@@ -1,0 +1,99 @@
+@import "../../base/fn";
+
+.kakaui-uploader{}
+.kakaui-uploader__hd{
+    display: flex;
+    padding-bottom: @kakauiCellGapV;
+    align-items: center;
+}
+.kakaui-uploader__title{
+    flex: 1;
+}
+.kakaui-uploader__info{
+    color: @kakauiTextColorTips;
+}
+
+.kakaui-uploader__bd{
+    margin-bottom: @kakauiCellGapH - (@kakauiCellGapV + @kakauiUploaderFileSpacing);
+    margin-right: -@kakauiUploaderFileSpacing;
+    overflow: hidden;
+}
+.kakaui-uploader__files{
+    list-style: none;
+}
+.kakaui-uploader__file{
+    float: left;
+    margin-right: @kakauiUploaderFileSpacing;
+    margin-bottom: @kakauiUploaderFileSpacing;
+    width: @kakauiUploaderSize;
+    height: @kakauiUploaderSize;
+    background: no-repeat center center;
+    background-size: cover;
+}
+.kakaui-uploader__file_status{
+    position: relative;
+    &:before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    .kakaui-uploader__file-content{
+        display: block;
+    }
+}
+.kakaui-uploader__file-content{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    .kakaui-icon-warn{
+        display: inline-block;
+    }
+}
+.kakaui-uploader__input-box{
+    float:left;
+    position: relative;
+    margin-right: @kakauiUploaderFileSpacing;
+    margin-bottom: @kakauiUploaderFileSpacing;
+    width: @kakauiUploaderSize - @kakauiUploaderBorderWidth * 2;
+    height: @kakauiUploaderSize - @kakauiUploaderBorderWidth * 2;
+    border: @kakauiUploaderBorderWidth solid @kakauiUploaderBorderColor;
+    &:before, &:after{
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: @kakauiUploaderBorderColor;
+    }
+    &:before{
+        width: @kakauiUploaderBorderWidth + 1;
+        height: @kakauiUploaderSize / 2;
+    }
+    &:after{
+        width: @kakauiUploaderSize / 2;
+        height: @kakauiUploaderBorderWidth + 1;
+    }
+    &:active{
+        border-color: @kakauiUploaderActiveBorderColor;
+        &:before, &:after{
+            background-color: @kakauiUploaderActiveBorderColor;
+        }
+    }
+}
+.kakaui-uploader__input{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    .setTapColor();
+}

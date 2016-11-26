@@ -1,0 +1,34 @@
+@import "../../base/fn";
+
+
+.kakaui-panel {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    position: relative;
+    overflow: hidden;
+    &:before {
+        .setTopLine(@kakauiLineColorLight);
+    }
+    &:after {
+        .setBottomLine(@kakauiLineColorLight);
+    }
+}
+
+.kakaui-panel__hd {
+    padding: 14px 15px 10px;
+    color: @kakauiTextColorGray;
+    font-size: 13px;
+    position: relative;
+    &:after {
+        .setBottomLine(@kakauiLineColorLight);
+        left: 15px;
+    }
+}
+
+
+
+

@@ -1,0 +1,29 @@
+@import "../../base/fn";
+
+.kakaui-btn_plain-primary {
+    color: @kakauiBtnPlainPrimaryColor;
+    border: 1px solid @kakauiBtnPlainPrimaryBorderColor;
+    &:not(.kakaui-btn_plain-disabled):active {
+        color:@kakauiBtnPlainPrimaryActiveColor;
+        border-color: @kakauiBtnPlainPrimaryActiveBorderColor;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.kakaui-btn_plain-default {
+    color: @kakauiBtnPlainDefaultColor;
+    border: 1px solid @kakauiBtnPlainDefaultBorderColor;
+    &:not(.kakaui-btn_plain-disabled):active {
+        color:@kakauiBtnPlainDefaultActiveColor;
+        border-color: @kakauiBtnPlainDefaultActiveBorderColor;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+.kakaui-btn_plain-disabled{
+    color:rgba(0,0,0,.2);
+    border-color:rgba(0,0,0,.2);
+}

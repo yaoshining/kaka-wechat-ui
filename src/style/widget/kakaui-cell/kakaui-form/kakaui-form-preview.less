@@ -1,0 +1,90 @@
+@import "../../../base/fn";
+
+.kakaui-form-preview{
+    position: relative;
+    background-color: #FFFFFF;
+    &:before{
+        .setTopLine(@kakauiCellBorderColor);
+    }
+    &:after{
+        .setBottomLine(@kakauiCellBorderColor);
+    }
+}
+.kakaui-form-preview__hd{
+    position: relative;
+    padding: @kakauiCellGapV @kakauiCellGapH;
+    text-align: right;
+    line-height: 2.5em;
+    &:after{
+        .setBottomLine(@kakauiCellBorderColor);
+        left: @kakauiCellGapH;
+    }
+    .kakaui-form-preview__value{
+        font-style: normal;
+        font-size: 1.6em;
+    }
+}
+.kakaui-form-preview__bd{
+    padding: @kakauiCellGapV @kakauiCellGapH;
+    font-size: .9em;
+    text-align: right;
+    color: @kakauiTextColorGray;
+    line-height: 2;
+}
+.kakaui-form-preview__ft{
+    position: relative;
+    line-height: 50px;
+    display: flex;
+    &:after {
+        .setTopLine(@kakauiDialogLineColor);
+    }
+}
+.kakaui-form-preview__item{
+    overflow: hidden;
+}
+.kakaui-form-preview__label{
+    float: left;
+    margin-right: 1em;
+    min-width: 4em;
+    color: @kakauiTextColorGray;
+    text-align: justify;
+    text-align-last: justify;
+}
+.kakaui-form-preview__value{
+    display: block;
+    overflow: hidden;
+    word-break:normal;
+    word-wrap: break-word;
+}
+.kakaui-form-preview__btn {
+    position: relative;
+    display: block;
+    flex: 1;
+    color: @kakauiDialogLinkColor;
+    text-align: center;
+    .setTapColor();
+    button&{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        line-height: inherit;
+        font-size: inherit;
+    }
+    &:active {
+        background-color: @kakauiDialogLinkActiveBc;
+    }
+    &:after {
+        .setLeftLine(@kakauiDialogLineColor);
+    }
+    &:first-child {
+        &:after {
+            display: none;
+        }
+    }
+}
+.kakaui-form-preview__btn_default {
+    color: @kakauiTextColorGray;
+}
+.kakaui-form-preview__btn_primary {
+    color: #0BB20C;
+}

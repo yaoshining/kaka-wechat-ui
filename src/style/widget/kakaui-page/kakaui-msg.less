@@ -1,0 +1,45 @@
+@import "../../base/fn";
+@import "../kakaui-button/kakaui-button";
+
+.kakaui-msg {
+    padding-top: @kakauiMsgPaddingTop;
+    text-align: center;
+}
+.kakaui-msg__icon-area {
+    margin-bottom: @kakauiMsgIconGap;
+}
+.kakaui-msg__text-area {
+    margin-bottom: @kakauiMsgTextGap;
+    padding:0 20px;
+}
+.kakaui-msg__text-area a{
+    color:@kakauiLinkColorDefault;
+}
+.kakaui-msg__title {
+    margin-bottom: @kakauiMsgTitleGap;
+    font-weight: 400;
+    font-size: 20px;
+}
+.kakaui-msg__desc {
+    font-size: 14px;
+    color: @kakauiTextColorGray;
+}
+.kakaui-msg__opr-area {
+    margin-bottom: @kakauiMsgOprGap;
+}
+.kakaui-msg__extra-area {
+    margin-bottom: @kakauiMsgExtraAreaGap;
+    font-size: 14px;
+    color: @kakauiTextColorGray;
+    a{color: @kakauiLinkColorDefault;}
+}
+
+@media screen and (min-height: @kakauiMsgExtraAreaOfMinHeight) {
+    .kakaui-msg__extra-area {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}
