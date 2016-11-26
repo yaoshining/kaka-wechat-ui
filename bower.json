@@ -18,5 +18,11 @@
         "ui"
     ],
     "homepage": "https://github.com/yaoshining/kaka-wechat-ui",
-    "ignore": []
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "dist/example",
+        "gulpfile.js",
+        "package.js"
+    ]
 }
