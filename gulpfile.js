@@ -12,6 +12,7 @@ var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var pkg = require('./package.json');
+var concat = require('gulp-concat');
 var yargs = require('yargs')
     .options({
         'w': {
@@ -60,14 +61,14 @@ gulp.task('build:style', function (){
         .pipe(gulp.dest(dist));
 });
 
-gulp.task('build:example:assets', function (){
-    gulp.src('src/example/**/*.?(png|jpg|gif|js)', option)
+gulp.task('build:kakaui:assets', function (){
+    gulp.src('src/kakaui/**/*.?(png|jpg|gif|js)', option)
         .pipe(gulp.dest(dist))
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example:style', function (){
-    gulp.src('src/example/example.less', option)
+gulp.task('build:kakaui:style', function (){
+    gulp.src('src/kakaui/example.less', option)
         .pipe(less().on('error', function (e){
             console.error(e.message);
             this.emit('end');
@@ -81,8 +82,8 @@ gulp.task('build:example:style', function (){
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example:html', function (){
-    gulp.src('src/example/index.html', option)
+gulp.task('build:kakaui:html', function (){
+    gulp.src('src/kakaui/index.html', option)
         .pipe(tap(function (file){
             var dir = path.dirname(file.path);
             var contents = file.contents.toString();
@@ -98,15 +99,22 @@ gulp.task('build:example:html', function (){
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('build:example', ['build:example:assets', 'build:example:style', 'build:example:html']);
+gulp.task('build:kakaui', ['build:kakaui:assets', 'build:kakaui:style', 'build:kakaui:html']);
 
-gulp.task('release', ['build:style', 'build:example']);
+gulp.task('release', ['build:style', 'build:kakaui', 'build:script']);
 
 gulp.task('watch', ['release'], function () {
     gulp.watch('src/style/**/*', ['build:style']);
-    gulp.watch('src/example/example.less', ['build:example:style']);
-    gulp.watch('src/example/**/*.?(png|jpg|gif|js)', ['build:example:assets']);
-    gulp.watch('src/**/*.html', ['build:example:html']);
+    gulp.watch('src/kakaui/example.less', ['build:kakaui:style']);
+    gulp.watch('src/kakaui/**/*.?(png|jpg|gif|js)', ['build:kakaui:assets']);
+    gulp.watch('src/**/*.html', ['build:kakaui:html']);
+});
+
+gulp.task('build:script', function (){
+    gulp.src(['src/script/weui.min.js', 'src/script/**/*.js'], option)
+        .pipe(concat('kakaui.min.js'))
+        .pipe(gulp.dest(path.join(dist, 'script')))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('server', function () {
@@ -122,7 +130,7 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/example'
+        startPath: '/kakaui'
     });
 });
 
