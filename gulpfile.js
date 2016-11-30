@@ -13,6 +13,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
 var pkg = require('./package.json');
 var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var yargs = require('yargs')
     .options({
         'w': {
@@ -104,6 +105,7 @@ gulp.task('build:kakaui', ['build:kakaui:assets', 'build:kakaui:style', 'build:k
 gulp.task('release', ['build:style', 'build:kakaui', 'build:script']);
 
 gulp.task('watch', ['release'], function () {
+    gulp.watch('src/script/**/*', ['build:script']);
     gulp.watch('src/style/**/*', ['build:style']);
     gulp.watch('src/kakaui/example.less', ['build:kakaui:style']);
     gulp.watch('src/kakaui/**/*.?(png|jpg|gif|js)', ['build:kakaui:assets']);
@@ -112,9 +114,14 @@ gulp.task('watch', ['release'], function () {
 
 gulp.task('build:script', function (){
     gulp.src(['src/script/weui.min.js', 'src/script/**/*.js'], option)
-        .pipe(concat('kakaui.min.js'))
+        .pipe(concat('kakaui.js'))
         .pipe(gulp.dest(path.join(dist, 'script')))
-        .pipe(browserSync.reload({stream: true}));
+        .pipe(browserSync.reload({stream: true}))
+        .pipe(uglify())
+        .pipe(rename(function (path) {
+            path.basename += '.min';
+        }))
+        .pipe(gulp.dest(path.join(dist, 'script')));
 });
 
 gulp.task('server', function () {

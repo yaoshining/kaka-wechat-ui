@@ -16,6 +16,23 @@
     &:after {
         .setBottomLine(@kakauiCellBorderColor);
     }
+
+    &.kakaui-cells__material {
+        background-color: transparent;
+        .kakaui-cell {
+            padding-left: 0;
+            padding-right: 0;
+            border-bottom: 1px solid #bababa;
+        }
+
+        &:before {
+            border: none;
+        }
+
+        &:after {
+            border: none;
+        }
+    }
 }
 
 .kakaui-cells__title {

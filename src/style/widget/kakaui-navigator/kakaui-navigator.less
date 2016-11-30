@@ -1,0 +1,36 @@
+@import "../../base/fn";
+
+.page__navigator {
+  position: fixed;
+  top: 0;
+  height: @kakauiNavigatorHeight;
+  z-index: 900;
+  background-color: #EEEEEE;
+  width: 100%;
+  line-height: @kakauiNavigatorHeight;
+
+  & + .page__bd {
+    margin-top: @kakauiNavigatorHeight;
+  }
+
+  & + .page__bd_height100 {
+    height: calc(~"100% - @{kakauiNavigatorHeight}");
+  }
+
+  .page__title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    line-height: @kakauiNavigatorHeight;
+    transform: translateX(-50%);
+  }
+
+  .page__navigator_back {
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+.page__bd_height100 {
+  height: 100%;
+}

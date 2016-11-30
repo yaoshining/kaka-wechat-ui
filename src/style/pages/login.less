@@ -1,0 +1,34 @@
+.page.login, .page.forgot, .page.register {
+  .page__close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    vertical-align: middle;
+    font: normal normal normal 14px/1 "kakaui";
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    font-size: 22px;
+    color: #6e6e6e;
+    &:before{
+      display: inline-block;
+      margin-left: .2em;
+      margin-right: .2em;
+      content: "\EA13";
+    }
+  }
+
+  .kakaui-cell {
+    [class^="kakaui-icon-"], [class*=" kakaui-icon-"] {
+      font-size: 26px;
+      color: #e78985;
+      text-align: center;
+      width: 40px;
+      margin-right: 5px;
+    }
+  }
+
+  .page__hd {
+    padding-bottom: 20px;
+  }
+}

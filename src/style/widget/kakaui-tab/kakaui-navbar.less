@@ -2,20 +2,21 @@
 
 .kakaui-navbar {
     display: flex;
-    position: absolute;
+    position: relative;
     z-index: 500;
     top: 0;
     width: 100%;
     background-color: #FAFAFA;
+    flex-basis: 50px;
 
     &:after {
         .setBottomLine(#CCCCCC);
     }
 
-    & + .kakaui-tab__panel {
-        padding-top: 50px;
-        padding-bottom: 0;
-    }
+    //& + .kakaui-tab__panel {
+    //    padding-top: 50px;
+    //    padding-bottom: 0;
+    //}
 }
 
 .kakaui-navbar__item {

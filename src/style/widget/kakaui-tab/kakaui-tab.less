@@ -5,14 +5,18 @@
 .kakaui-tab {
     position: relative;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .kakaui-tab__panel {
     box-sizing: border-box;
     height: 100%;
-    padding-bottom: 50px;
+    //padding-bottom: 50px;
     overflow: auto;
+    width: 100%;
     -webkit-overflow-scrolling: touch;
+    flex: 1;
 }
 .kakaui-tab__content{
     display: none;
