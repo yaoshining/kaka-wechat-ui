@@ -6,11 +6,12 @@
     z-index: 500;
     top: 0;
     width: 100%;
-    background-color: #FAFAFA;
+    background-color: #FFFFFF;
     flex-basis: 50px;
+    color: #b3b3b3;
 
     &:after {
-        .setBottomLine(#CCCCCC);
+        //.setBottomLine(#CCCCCC);
     }
 
     //& + .kakaui-tab__panel {
@@ -29,15 +30,24 @@
     .setTapColor();
 
     &:active {
-        background-color: #EDEDED;
+        //background-color: #EDEDED;
     }
 
     &.kakaui-bar__item_on {
-        background-color: #EAEAEA;
+        //background-color: #EAEAEA;
+        color: #E24F47;
+        &:before {
+            border-color: #E24F47;
+        }
     }
 
     &:after {
-        .setRightLine(#CCCCCC);
+        .setRightLine(#CCCCCC, 10px);
+    }
+
+    &:before {
+        .setBottomLine(#F1F1F1);
+        border-width: 3px;
     }
 
     &:last-child {

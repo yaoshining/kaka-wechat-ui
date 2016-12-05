@@ -25,9 +25,26 @@
     transform: translateX(-50%);
   }
 
-  .page__navigator_back {
+  .page__navigator_left, .page__navigator_right, .page__navigator_back {
+    height: @kakauiNavigatorHeight;
+    line-height: @kakauiNavigatorHeight;
+  }
+
+  .page__navigator_left,.page__navigator_back {
     margin-left: 15px;
     cursor: pointer;
+  }
+
+  .page__navigator_right {
+    margin-right: 15px;
+    cursor: pointer;
+    float: right;
+  }
+
+  .kakaui__logo {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
   }
 }
 

@@ -29,6 +29,29 @@
     &:active {
         background-color: @kakauiBgColorActive;
     }
+
+    .kakaui-icon-checked {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+    }
+
+    .kakaui-icon-checked:before {
+        content: '\EA01';
+        color: #C9C9C9;
+        font-size: 23px;
+        display: block;
+        margin: 0;
+        position: relative;
+    }
+
+    .kakaui-check:checked + .kakaui-icon-checked:before {
+        content: '\EA30';
+        color: #e78985;
+        background-color: #ffffff;
+        border-radius: 50%;
+        pointer-events: none;
+    }
 }
 
 .kakaui-grid__icon {

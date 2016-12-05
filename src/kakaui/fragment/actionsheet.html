@@ -4,11 +4,11 @@
         <p class="page__desc">弹出式菜单</p>
     </div>
     <div class="page__bd page__bd_spacing">
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showIOSActionSheet">iOS ActionSheet</a>
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showAndroidActionSheet">Android ActionSheet</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-actionsheet__trigger" data-target="iosActionsheet" id="showIOSActionSheet">iOS ActionSheet</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-actionsheet__trigger" data-target="androidActionsheet" data-style="android" id="showAndroidActionSheet">Android ActionSheet</a>
     </div>
     <!--BEGIN actionSheet-->
-    <div>s
+    <div>
         <div class="kakaui-mask" id="iosMask" style="display: none"></div>
         <div class="kakaui-actionsheet" id="iosActionsheet">
             <div class="kakaui-actionsheet__menu">
@@ -18,7 +18,7 @@
                 <div class="kakaui-actionsheet__cell">示例菜单</div>
             </div>
             <div class="kakaui-actionsheet__action">
-                <div class="kakaui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+                <div class="kakaui-actionsheet__cell kakaui-actionsheet__cancel" id="iosActionsheetCancel">取消</div>
             </div>
         </div>
     </div>
@@ -38,35 +38,3 @@
         <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
     </div>
 </div>
-<script type="text/javascript">
-    // ios
-    $(function(){
-        var $iosActionsheet = $('#iosActionsheet');
-        var $iosMask = $('#iosMask');
-
-        function hideActionSheet() {
-            $iosActionsheet.removeClass('kakaui-actionsheet_toggle');
-            $iosMask.fadeOut(200);
-        }
-
-        $iosMask.on('click', hideActionSheet);
-        $('#iosActionsheetCancel').on('click', hideActionSheet);
-        $("#showIOSActionSheet").on("click", function(){
-            $iosActionsheet.addClass('kakaui-actionsheet_toggle');
-            $iosMask.fadeIn(200);
-        });
-    });
-
-    // android
-    $(function(){
-        var $androidActionSheet = $('#androidActionsheet');
-        var $androidMask = $androidActionSheet.find('.kakaui-mask');
-
-        $("#showAndroidActionSheet").on('click', function(){
-            $androidActionSheet.fadeIn(200);
-            $androidMask.on('click',function () {
-                $androidActionSheet.fadeOut(200);
-            });
-        });
-    });
-</script>

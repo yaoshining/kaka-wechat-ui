@@ -1,0 +1,45 @@
+.kakaui-coupon {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  &.kakaui-coupon_gray {
+    .kakaui-coupon-bd {
+      background-image: url("../../../kakaui/images/kaka/coupon_gray.png");
+    }
+  }
+}
+
+.kakaui-coupon-bd {
+  background: url("../../../kakaui/images/kaka/coupon.png") no-repeat;
+  background-size: 100%;
+  min-height: 100px;
+  color: #ffffff;
+  text-align: right;
+  position: relative;
+}
+
+.kakaui-coupon-text {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) translateY(.4em);
+  & > h1 {
+    font-size: 5vw;
+    font-weight: normal;
+    line-height: normal;
+    & > .price {
+      font-size: 200%;
+      margin: 0 5px;
+    }
+  }
+
+  & > p {
+    font-size: 3vw;
+  }
+}
+
+.kakaui-coupon-ft {
+  padding: 10px 15px;
+  overflow: hidden;
+  font-size: .8rem;
+}

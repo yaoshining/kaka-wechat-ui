@@ -1,0 +1,39 @@
+@import "../base/fn";
+
+.page.personal {
+  .page__banner {
+    background: url("../../kakaui/images/kaka/banner.png") no-repeat center;
+    background-size: cover;
+    text-align: center;
+    .kakaui__avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: #F8F8F8 url("../../kakaui/images/kaka/logo_gray.png") center no-repeat;
+      background-size: 60px;
+      margin: 5% auto .5em;
+      border: 2px solid #FFFFFF;
+    }
+  }
+
+  .kakaui-cell__hd {
+    [class^="kakaui-icon-"], [class*=" kakaui-icon-"] {
+      font-size: 26px;
+      color: #e78985;
+      text-align: center;
+      width: 40px;
+      margin-right: 5px;
+    }
+  }
+
+  .kakaui-tabbar__label {
+    img {
+      width: 100%;
+      max-width: 80px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

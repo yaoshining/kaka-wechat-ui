@@ -3,6 +3,7 @@
 .kakaui-media-box {
     padding: 15px;
     position: relative;
+    display: block;
     &:before {
         .setTopLine(@kakauiLineColorLight);
         left: 15px;
@@ -19,6 +20,22 @@
         &:active{
             background-color:#ECECEC;
         }
+    }
+
+    .kakaui-icon-checked:before {
+        content: '\EA01';
+        color: #C9C9C9;
+        font-size: 23px;
+        display: block;
+    }
+
+    .kakaui-check:checked + .kakaui-icon-checked:before {
+        content: '\EA30';
+        color: #e78985;
+    }
+
+    &.selected {
+        background-color: #f4e3e2;
     }
 }
 .kakaui-media-box__title {

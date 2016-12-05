@@ -65,6 +65,7 @@ $(function () {
                 $html.removeClass('slideIn').addClass('js_show');
             });
             this.$container.append($html);
+            $(document).trigger('page:afterRender', [$html[0]]);
             this._pageAppend.call(this, $html);
             this._pageStack.push({
                 config: config,
@@ -94,7 +95,7 @@ $(function () {
                 var html = $(config.template).html();
                 var $html = $(html).addClass('js_show').addClass(config.name);
                 $html.insertBefore(stack.dom);
-
+                $(document).trigger('page:afterRender', [$html]);
                 if (!config.isBind) {
                     this._bind(config);
                 }

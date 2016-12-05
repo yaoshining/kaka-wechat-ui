@@ -37,13 +37,13 @@
     transform: scaleX(0.5);
 }
 
-.setRightLine(@c: #C7C7C7) {
+.setRightLine(@c: #C7C7C7, @spacing: 0) {
     content: " ";
     position: absolute;
     right: 0;
-    top: 0;
+    top: @spacing;
     width: 1px;
-    bottom: 0;
+    bottom: @spacing;
     border-right: 1px solid @c;
     color: @c;
     transform-origin: 100% 0;
