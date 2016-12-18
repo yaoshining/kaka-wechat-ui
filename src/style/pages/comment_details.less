@@ -1,0 +1,104 @@
+.page.comment_details {
+
+  .kakaui-comment {
+    width: 100%;
+  }
+
+  .kakaui-comment-hd {
+    overflow: hidden;
+    .kakaui-comment-avatar {
+      float: left;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      & > img {
+        float: left;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .kakaui-comment-date {
+      float: right;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 60px;
+      color: darkgrey;
+    }
+
+    .kakaui-comment-stars {
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      flex-direction: column;
+      padding: 0 10px;
+    }
+
+    .kakaui-stars {
+      & > li {
+        margin-right: -2px;
+        font-size: 15px;
+      }
+    }
+
+    .kakaui-comment-phone {
+      font-size: 16px;
+    }
+
+  }
+
+  .kakaui-comment-bd {
+    padding: 10px 0;
+    .kakaui-comment-content {
+      font-size: 15px;
+    }
+  }
+
+  .liked-statistic {
+    color: darkgrey;
+    font-size: 14px;
+  }
+
+  .kakaui-media-box {
+    padding-bottom: 5px;
+  }
+
+  .kakaui-comment-images {
+    overflow: hidden;
+  }
+
+  ul.kakaui-comment-thumbs {
+    & > li {
+      float: left;
+      margin-right: 10px;
+      & > img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .like-btn {
+    float: right;
+    font-size: 12px;
+    border: 1px solid #fd8382;
+    padding: 2px 1em;
+    border-radius: 12px;
+    color: #333333;
+    margin-top: 12px;
+    &.like-btn-checked {
+      &:before {
+        content: '\E90F';
+      }
+    }
+    &:before {
+      font-family: 'kakaui2';
+      content: '\E90E';
+      position: relative;
+      top: 2px;
+      margin-right: 3px;
+      color: #fd8382;
+      font-weight: bold;
+    }
+  }
+}

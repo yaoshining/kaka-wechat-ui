@@ -74,6 +74,17 @@ function initStyle(page) {
     });
 }
 
+function initDialog() {
+    $(document).on('click', '.kakaui-dialog__trigger', function() {
+        var $target = $('#' + $(this).data('target'));
+        $target.fadeIn(200);
+    });
+
+    $(document).on('click', '.kakaui-dialog__btn', function(){
+       $(this).parents('.js_dialog').fadeOut(200);
+    });
+}
+
 $(document).on('page:afterRender', function(event, page) {
     $('.kakaui-check:checked', page)
         .closest('.kakaui-media-box')
@@ -89,4 +100,5 @@ $(function(){
     initTabs();
     initActionSheet();
     initMediaBox();
+    initDialog();
 });

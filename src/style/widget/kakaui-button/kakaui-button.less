@@ -32,6 +32,21 @@ button, input {
     padding: 0 1.32em;
     line-height: @kakauiBtnMiniHeight;
     font-size: @kakauiBtnMiniFontSize;
+    border-radius: 5px;
+    &:after {
+        border-radius: 10px;
+    }
+}
+
+.kakaui-btn_sm {
+    display: inline-block;
+    padding: 0 1.32em;
+    line-height: @kakauiBtnSmHeight;
+    font-size: @kakauiBtnSmFontSize;
+    border-radius: 5px;
+    &:after {
+        border-radius: 10px;
+    }
 }
 
 
@@ -57,6 +72,38 @@ button, input {
         flex: 1;
         &:last-child {
             margin-right: 0;
+        }
+    }
+}
+
+.kakaui-btn-group {
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 15px;
+    & > .kakaui-btn {
+        float: left;
+        margin: 0;
+        border-radius: 0;
+        &:after {
+            border-radius: 0;
+            border: none;
+        }
+        &:first-child {
+            border-top-left-radius: @kakauiBtnBorderRadius;
+            border-bottom-left-radius: @kakauiBtnBorderRadius;
+            &:after {
+                border-top-left-radius: 2 * @kakauiBtnBorderRadius;
+                border-bottom-left-radius: 2 * @kakauiBtnBorderRadius;
+            }
+        }
+
+        &:last-child {
+            border-top-right-radius: @kakauiBtnBorderRadius;
+            border-bottom-right-radius: @kakauiBtnBorderRadius;
+            &:after {
+                border-top-right-radius: 2 * @kakauiBtnBorderRadius;
+                border-bottom-right-radius: 2 * @kakauiBtnBorderRadius;
+            }
         }
     }
 }

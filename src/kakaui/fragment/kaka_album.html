@@ -4,6 +4,9 @@
         <h1 class="page__title">
             卡卡相册
         </h1>
+        <a class="page__navigator_right">
+            <img class="kakaui__logo" src="../../kakaui/images/kaka/logo_sm.png" alt="卡卡客服">
+        </a>
     </div>
     <div class="page__bd page__bd_height100">
         <div class="kakaui-tab">
@@ -179,7 +182,20 @@
                     </label>
                 </div>
                 <div class="kakaui-btn-area">
-                    <div class="kakaui-btn kakaui-btn_orange">提交</div>
+                    <div class="kakaui-btn kakaui-btn_orange kakaui-dialog__trigger" data-target="commitDialog">提交</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="js_dialog" id="commitDialog" style="display: none;">
+        <div class="kakaui-mask"></div>
+        <div class="kakaui-dialog">
+            <div class="kakaui-dialog__hd"><strong class="kakaui-dialog__title">提交失败</strong></div>
+            <div class="kakaui-dialog__bd">本套系含30张精修照，超出部分须前往印品商城支付</div>
+            <div class="kakaui-dialog__ft">
+                <div class="kakaui-btn-group">
+                    <a href="javascript:;" class="kakaui-btn kakaui-btn_sm kakaui-btn_yellow kakaui-dialog__btn">含泪重选</a>
+                    <a href="javascript:;" class="kakaui-btn kakaui-btn_sm kakaui-btn_orange">前往支付</a>
                 </div>
             </div>
         </div>

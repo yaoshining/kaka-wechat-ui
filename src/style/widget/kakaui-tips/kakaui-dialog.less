@@ -11,11 +11,14 @@
 
     background-color: @kakauiDialogBackgroundColor;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 10px;
     overflow: hidden;
 }
 .kakaui-dialog__hd {
-    padding: 1.3em @kakauiDialogGapWidth .5em;
+    padding: .7em @kakauiDialogGapWidth .5em;
+    & > strong {
+        font-weight: bold;
+    }
 }
 .kakaui-dialog__title {
     font-weight: 400;
@@ -28,7 +31,7 @@
     line-height: 1.3;
     word-wrap: break-word;
     word-break: break-all;
-    color: @kakauiTextColorGray;
+    color: #333333;
     &:first-child{
         padding:2.7em 20px 1.7em;
         color:#353535;
@@ -39,6 +42,7 @@
     line-height: 48px;
     font-size: 18px;
     display: flex;
+    justify-content: center;
     &:after {
         content: " ";
         .setTopLine(@kakauiDialogLineColor);

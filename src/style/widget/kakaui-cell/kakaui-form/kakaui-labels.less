@@ -1,0 +1,25 @@
+.kakaui-input-labels {
+  font-size: 17px;
+  & > label {
+    float: left;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    input[type="checkbox"] {
+      display: none;
+      &:checked {
+        & + .kakaui-input-label__text {
+          border-color: #f3a7a7;
+          background-color: #f7cccb;
+          color: #f68382;
+        }
+      }
+    }
+
+    & > .kakaui-input-label__text {
+      border: 1px solid #333333;
+      padding: .2em .5em;
+      border-radius: 6px;
+    }
+  }
+}

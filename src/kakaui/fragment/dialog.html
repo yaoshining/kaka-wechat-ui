@@ -4,10 +4,10 @@
         <p class="page__desc">对话框</p>
     </div>
     <div class="page__bd page__bd_spacing">
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showIOSDialog1">iOS Dialog样式一</a>
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showIOSDialog2">iOS Dialog样式二</a>
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showAndroidDialog1">Android Dialog样式一</a>
-        <a href="javascript:;" class="kakaui-btn kakaui-btn_default" id="showAndroidDialog2">Android Dialog样式二</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-dialog__trigger" data-target="iosDialog1" id="showIOSDialog1">iOS Dialog样式一</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-dialog__trigger" data-target="iosDialog2" id="showIOSDialog2">iOS Dialog样式二</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-dialog__trigger" data-target="androidDialog1" id="showAndroidDialog1">Android Dialog样式一</a>
+        <a href="javascript:;" class="kakaui-btn kakaui-btn_default kakaui-dialog__trigger" data-target="androidDialog2" id="showAndroidDialog2">Android Dialog样式二</a>
     </div>
     <div class="page__ft">
         <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
@@ -69,28 +69,3 @@
         <!--END dialog4-->
     </div>
 </div>
-<script type="text/javascript">
-    $(function(){
-        var $iosDialog1 = $('#iosDialog1'),
-            $iosDialog2 = $('#iosDialog2'),
-            $androidDialog1 = $('#androidDialog1'),
-            $androidDialog2 = $('#androidDialog2');
-
-        $('#dialogs').on('click', '.kakaui-dialog__btn', function(){
-            $(this).parents('.js_dialog').fadeOut(200);
-        });
-
-        $('#showIOSDialog1').on('click', function(){
-            $iosDialog1.fadeIn(200);
-        });
-        $('#showIOSDialog2').on('click', function(){
-            $iosDialog2.fadeIn(200);
-        });
-        $('#showAndroidDialog1').on('click', function(){
-            $androidDialog1.fadeIn(200);
-        });
-        $('#showAndroidDialog2').on('click', function(){
-            $androidDialog2.fadeIn(200);
-        });
-    });
-</script>

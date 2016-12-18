@@ -1,0 +1,16 @@
+ul.kakaui-stars {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  & > li {
+    float: left;
+    margin-right: 15px;
+    font-size: 20px;
+    color: #eaeaea;
+    &.stared {
+      & > [class^="kakaui-icon-"], [class*=" kakaui-icon-"] {
+        color: #f68382;
+      }
+    }
+  }
+}
